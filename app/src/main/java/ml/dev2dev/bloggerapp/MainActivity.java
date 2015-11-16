@@ -80,7 +80,52 @@ public class MainActivity extends ActionBarActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        public void getData(){
+            class GetDataJSON extends AsyncTask<String, Void, String>{
 
+                @Override
+                protected String doInBackground(String... params) {
+                    DefaultHttpClient httpclient = new DefaultHttpClient(new BasicHttpParams());
+                    HttpPost httppost = new HttpPost("http://seabanpr.co.ke/APILogin/client.php");
+
+                    // Depends on your web service
+                    httppost.setHeader("Content-type", "application/json");
+
+                    InputStream inputStream = null;
+                    String result = null;
+                    try {
+                        HttpResponse response = httpclient.execute(httppost);
+                        HttpEntity entity = response.getEntity();
+
+                        inputStream = entity.getContent();
+                        // json is UTF-8 by default
+                        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "UTF-8"), 8);
+                        StringBuilder sb = new StringBuilder();
+
+                        String line = null;
+                        while ((line = reader.readLine()) != null)
+                        {
+                            sb.append(line + "\n");
+                        }
+                        result = sb.toString();
+                    } catch (Exception e) {
+                        // Oops
+                    }
+                    finally {
+                        try{if(inputStream != null)inputStream.close();}catch(Exception squish){}
+                    }
+                    return result;
+                }
+
+                @Override
+                protected void onPostExecute(String result){
+                    myJSON=result;
+                    showList();
+                }
+            }
+            GetDataJSON g = new GetDataJSON();
+            g.execute();
+        }
     }
 
 
