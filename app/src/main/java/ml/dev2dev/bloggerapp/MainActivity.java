@@ -49,6 +49,39 @@ public class MainActivity extends ActionBarActivity {
         personList = new ArrayList<HashMap<String,String>>();
         getData();
     }
+    protected void showList(){
+        try {
+            JSONObject jsonObj = new JSONObject(myJSON);
+            peoples = jsonObj.getJSONArray(TAG_RESULTS);
+
+            for(int i=0;i<peoples.length();i++){
+                JSONObject c = peoples.getJSONObject(i);
+                String id = c.getString(TAG_ID);
+                String Title = c.getString(TAG_NAME);
+                String Blogpost = c.getString(TAG_ADD);
+
+                HashMap<String,String> persons = new HashMap<String,String>();
+
+                persons.put(TAG_ID,id);
+                persons.put(TAG_NAME,Title);
+                persons.put(TAG_ADD,Blogpost);
+
+                personList.add(persons);
+            }
+
+            ListAdapter adapter = new SimpleAdapter(
+                    MainActivity.this, personList, R.layout.list_items,
+                    new String[]{TAG_ID,TAG_NAME,TAG_ADD},
+                    new int[]{R.id.id, R.id.Title, R.id.Blogpost}
+            );
+
+            list.setAdapter(adapter);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
   }
