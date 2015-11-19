@@ -2,6 +2,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
+<<<<<<< HEAD
     <dimen name="guillotine_small_margin">24dp</dimen>
     <dimen name="guillotine_medium_margin">48dp</dimen>
     <dimen name="guillotine_large_margin">100dp</dimen>
@@ -10,4 +11,6 @@
     <dimen name="guillotine_item_text_size">20sp</dimen>
     <dimen name="guillotine_actionbar_background_view_height">35dp</dimen>
 
+=======
+>>>>>>> b2c86e1e541dc8a98acf86ac9a46327baebf3536
 </resources>

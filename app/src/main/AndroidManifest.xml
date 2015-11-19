@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< HEAD
     package="ml.dev2dev.yslbloggers" >
+=======
+    package="ml.dev2dev.bloggerapp" >
+>>>>>>> b2c86e1e541dc8a98acf86ac9a46327baebf3536
 
     <application
         android:allowBackup="true"
@@ -8,13 +12,22 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
+<<<<<<< HEAD
         <activity android:name=".MainActivity" >
+=======
+        <activity android:name=".Render" >
+>>>>>>> b2c86e1e541dc8a98acf86ac9a46327baebf3536
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
+=======
+        <activity android:name=".MainActivity" >
+        </activity>
+>>>>>>> b2c86e1e541dc8a98acf86ac9a46327baebf3536
     </application>
 
 </manifest>

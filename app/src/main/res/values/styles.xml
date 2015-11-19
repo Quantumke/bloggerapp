@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+<<<<<<< HEAD
     <style name="LinearLayout" />
 
     <style name="LinearLayout.GuillotineItem">
@@ -66,5 +67,7 @@
         <item name="android:layout_marginLeft">@dimen/guillotine_large_margin</item>
     </style>
 
+=======
+>>>>>>> b2c86e1e541dc8a98acf86ac9a46327baebf3536
 
 </resources>
